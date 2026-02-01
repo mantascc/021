@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IB & UNIVERSITY PLANNING GUIDE</title>
+    <style>
+        :root {
+            /* Ground */
+            --ground-void: #0a0a0a;
+            --ground-base: #0f0f0f;
+            --ground-raised: #141414;
+            --ground-surface: #1a1a1a;
+            --ground-modal: #242424;
+
+            /* Text */
+            --text-primary: #ffffff;
+            --text-default: #f5f5f7;
+            --text-secondary: #a8aab8;
+            --text-tertiary: #666666;
+            --text-ghost: #333333;
+
+            /* Borders */
+            --border-subtle: #1a1a1a;
+            --border-default: #2a2a2a;
+            --border-strong: #3a3d52;
+
+            /* Accent */
+            --accent: #00a8ff;
+
+            /* Typography */
+            --font-mono: 'JetBrains Mono', 'IBM Plex Mono', 'SF Mono', Monaco, 'Courier New', monospace;
+            --text-xs: 10px;
+            --text-sm: 11px;
+            --text-base: 13px;
+            --text-md: 14px;
+            --text-lg: 16px;
+            --text-xl: 20px;
+            --leading-tight: 1.25;
+            --leading-base: 1.5;
+            --leading-loose: 1.75;
+            --tracking-wide: 0.08em;
+
+            /* Spacing */
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+            --space-6: 24px;
+            --space-8: 32px;
+            --space-10: 40px;
+            --space-12: 48px;
+            --space-16: 64px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--ground-void);
+            color: var(--text-default);
+            font-family: var(--font-mono);
+            font-size: var(--text-base);
+            line-height: var(--leading-base);
+            padding: var(--space-12) var(--space-6);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: var(--space-12);
+            padding-bottom: var(--space-6);
+            border-bottom: 1px solid var(--border-default);
+        }
+
+        h1 {
+            color: var(--text-primary);
+            font-size: var(--text-xl);
+            font-weight: 600;
+            letter-spacing: var(--tracking-wide);
+            text-transform: uppercase;
+            margin-bottom: var(--space-3);
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+            letter-spacing: var(--tracking-wide);
+            text-transform: uppercase;
+        }
+
+        h2 {
+            color: var(--text-primary);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            letter-spacing: var(--tracking-wide);
+            text-transform: uppercase;
+            margin-top: var(--space-12);
+            margin-bottom: var(--space-6);
+            padding-bottom: var(--space-3);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        h3 {
+            color: var(--text-primary);
+            font-size: var(--text-md);
+            font-weight: 600;
+            margin-top: var(--space-8);
+            margin-bottom: var(--space-4);
+        }
+
+        h4 {
+            color: var(--text-secondary);
+            font-size: var(--text-base);
+            font-weight: 600;
+            margin-top: var(--space-6);
+            margin-bottom: var(--space-3);
+        }
+
+        p {
+            margin-bottom: var(--space-4);
+        }
+
+        .section {
+            margin-bottom: var(--space-12);
+        }
+
+        .card {
+            background: var(--ground-base);
+            border: 1px solid var(--border-default);
+            padding: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        .highlight {
+            background: var(--ground-raised);
+            border-left: 2px solid var(--accent);
+            padding: var(--space-4);
+            margin: var(--space-4) 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-6) 0;
+            font-size: var(--text-sm);
+        }
+
+        th {
+            background: var(--ground-raised);
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-align: left;
+            padding: var(--space-3);
+            border: 1px solid var(--border-default);
+            text-transform: uppercase;
+            font-size: var(--text-xs);
+            letter-spacing: var(--tracking-wide);
+        }
+
+        td {
+            padding: var(--space-3);
+            border: 1px solid var(--border-subtle);
+            vertical-align: top;
+        }
+
+        tr:hover {
+            background: var(--ground-surface);
+        }
+
+        ul, ol {
+            margin-left: var(--space-6);
+            margin-bottom: var(--space-4);
+        }
+
+        li {
+            margin-bottom: var(--space-2);
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .label {
+            color: var(--text-tertiary);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wide);
+            margin-bottom: var(--space-2);
+            display: block;
+        }
+
+        .metric {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border-default);
+            margin: var(--space-8) 0;
+        }
+
+        .grid {
+            display: grid;
+            gap: var(--space-6);
+            margin: var(--space-6) 0;
+        }
+
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .note {
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+            font-style: italic;
+            padding: var(--space-3);
+            border-left: 1px solid var(--border-strong);
+            margin: var(--space-4) 0;
+        }
+
+        .program-card {
+            background: var(--ground-surface);
+            border: 1px solid var(--border-default);
+            padding: var(--space-4);
+            margin-bottom: var(--space-4);
+        }
+
+        .program-card h4 {
+            margin-top: 0;
+            color: var(--accent);
+        }
+
+        .program-meta {
+            display: flex;
+            gap: var(--space-6);
+            flex-wrap: wrap;
+            margin-top: var(--space-3);
+            padding-top: var(--space-3);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .program-meta-item {
+            font-size: var(--text-xs);
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 150ms linear;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>IB & UNIVERSITY PLANNING GUIDE</h1>
+        <div class="subtitle">for adomas — comprehensive reference</div>
+    </header>
+
+    <div class="section">
+        <h2>The IB Decision (11th–12th Grade)</h2>
+
+        <div class="highlight">
+            <h3>RECOMMENDED HL COMBO</h3>
+            <ul>
+                <li><strong>Computer Science</strong> — Core skill, opens all tech doors</li>
+                <li><strong>Math AA</strong> — Keeps STEM paths alive</li>
+                <li><strong>Drama</strong> — Creative outlet, soft skills, burnout protection</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>WHY THIS WORKS</h4>
+            <p>CS + Math = technical foundation. Drama = communication, collaboration, creative thinking. The combo serves game design, product leadership, and hybrid creative-tech roles that don't have names yet.</p>
+        </div>
+
+        <div class="note">
+            <strong>Physics note:</strong> Keep at SL. Preserves the space curiosity without the grind. Space industry needs more than physicists.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>University Thinking</h2>
+
+        <h3>INTEREST TRANSLATION</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Interest</th>
+                    <th>What it could mean</th>
+                    <th>Path</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Computer Science</td>
+                    <td>Building systems</td>
+                    <td>CS degree (broad)</td>
+                </tr>
+                <tr>
+                    <td>Video games</td>
+                    <td>Making them</td>
+                    <td>Game dev / CS + Design</td>
+                </tr>
+                <tr>
+                    <td>Video games</td>
+                    <td>Business side</td>
+                    <td>CS + Business</td>
+                </tr>
+                <tr>
+                    <td>Video games</td>
+                    <td>Worlds/narrative</td>
+                    <td>CS + Storytelling/Film</td>
+                </tr>
+                <tr>
+                    <td>Space</td>
+                    <td>Adjacent careers</td>
+                    <td>Engineering, policy, design, business</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>GEOGRAPHY OPTIONS (ENGLISH-TAUGHT)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Region</th>
+                    <th>Pros</th>
+                    <th>Cons</th>
+                    <th>Examples</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Denmark</strong></td>
+                    <td>Home, free tuition (EU)</td>
+                    <td>Limited English options</td>
+                    <td>ITU, KEA</td>
+                </tr>
+                <tr>
+                    <td><strong>Netherlands</strong></td>
+                    <td>Strong programs, reasonable cost</td>
+                    <td>—</td>
+                    <td>Breda (games), TU Delft</td>
+                </tr>
+                <tr>
+                    <td><strong>UK</strong></td>
+                    <td>Best English instruction</td>
+                    <td>Expensive post-Brexit</td>
+                    <td>Abertay, Goldsmiths, Falmouth</td>
+                </tr>
+                <tr>
+                    <td><strong>Sweden/Finland</strong></td>
+                    <td>Often tuition-free (EU)</td>
+                    <td>Fewer options</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td><strong>US</strong></td>
+                    <td>Most options, strong networks</td>
+                    <td>Most expensive, complex admissions</td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>DECISION AXES</h3>
+        <div class="grid grid-2">
+            <div class="card">
+                <span class="label">proximity</span>
+                <p><strong>Close vs. far</strong> — Independence level he wants</p>
+            </div>
+            <div class="card">
+                <span class="label">specialization</span>
+                <p><strong>Specialized vs. general</strong> — Game design degree (focused) vs. CS (pivot-friendly). When uncertain, go general.</p>
+            </div>
+            <div class="card">
+                <span class="label">economics</span>
+                <p><strong>Cost</strong> — Shapes the list fast</p>
+            </div>
+            <div class="card">
+                <span class="label">network</span>
+                <p><strong>Network</strong> — Research backwards from studios/companies he admires</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Netherlands Deep Dive</h2>
+
+        <div class="highlight">
+            <p>Netherlands offers excellent English-taught bachelor's programs in CS and game design, ideal for your IB profile (CS/Math/Drama HLs). They're affordable for EU students (<span class="metric">~€2,300/year</span> statutory fee), with strong industry networks.</p>
+        </div>
+
+        <h3>TOP GAME DESIGN OPTIONS</h3>
+        <p class="note">These focus on creative-tech hybrids like game dev, narrative, and production—portfolio-based entry.</p>
+
+        <div class="program-card">
+            <h4>Creative Media & Game Technologies — <a href="https://www.buas.nl/" target="_blank">BUas (Breda)</a></h4>
+            <p><strong>Key Tracks:</strong> Programming, Design/Production, Visual Arts</p>
+            <p><strong>Duration:</strong> 4 years (3-year fast-track for strong academics)</p>
+            <p><strong>IB Entry:</strong> Portfolio required; Math/Science recommended</p>
+            <div class="program-meta">
+                <div class="program-meta-item">
+                    <span class="label">ranking</span>
+                    <span class="metric">#3 globally 2025</span>
+                </div>
+                <div class="program-meta-item">
+                    <span class="label">partnerships</span>
+                    Unreal Engine partner, Unity/Guerrilla ties
+                </div>
+            </div>
+            <p style="margin-top: var(--space-3);">Studio projects with industry-standard tools and direct industry connections.</p>
+        </div>
+
+        <div class="program-card">
+            <h4>Creative Media & Game Technologies — <a href="https://www.hanze.nl/" target="_blank">Hanze UAS (Groningen)</a></h4>
+            <p><strong>Key Tracks:</strong> Game dev full-stack</p>
+            <p><strong>Duration:</strong> 4 years</p>
+            <p><strong>IB Entry:</strong> IB 28+ equiv., portfolio</p>
+            <div class="program-meta">
+                <div class="program-meta-item">
+                    <span class="label">focus</span>
+                    Cutting-edge tech, international teams
+                </div>
+            </div>
+        </div>
+
+        <div class="program-card">
+            <h4>Game Development — <a href="https://www.hku.nl/" target="_blank">HKU Utrecht</a></h4>
+            <p><strong>Key Tracks:</strong> Art, Design, Development</p>
+            <p><strong>Duration:</strong> 4 years</p>
+            <p><strong>IB Entry:</strong> Portfolio, creative tests</p>
+            <div class="program-meta">
+                <div class="program-meta-item">
+                    <span class="label">approach</span>
+                    Europe-first creative focus, industry lecturers
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3>TOP CS OPTIONS (BROAD/PIVOT-FRIENDLY)</h3>
+        <p class="note">Strong for systems-building, space-adjacent engineering.</p>
+
+        <div class="program-card">
+            <h4>BSc Computer Science & Engineering — <a href="https://www.tue.nl/" target="_blank">TU Eindhoven</a></h4>
+            <p><strong>Focus:</strong> AI, software, games electives</p>
+            <p><strong>Duration:</strong> 3 years</p>
+            <p><strong>IB Entry:</strong> IB 32+, Math AA HL 6, Physics SL/HL</p>
+            <div class="program-meta">
+                <div class="program-meta-item">
+                    <span class="label">ecosystem</span>
+                    Tech hub, ASML/Philips networks
+                </div>
+            </div>
+        </div>
+
+        <div class="program-card">
+            <h4>BSc Computer Science — <a href="https://www.uva.nl/" target="_blank">University of Amsterdam (UvA)</a></h4>
+            <p><strong>Focus:</strong> Broad CS, data/games</p>
+            <p><strong>Duration:</strong> 3 years</p>
+            <p><strong>IB Entry:</strong> IB 30+, Math HL 5</p>
+            <div class="program-meta">
+                <div class="program-meta-item">
+                    <span class="label">culture</span>
+                    Research-heavy, startup scene
+                </div>
+            </div>
+        </div>
+
+        <div class="program-card">
+            <h4>BSc Computer Science — <a href="https://www.ru.nl/" target="_blank">Radboud University (Nijmegen)</a></h4>
+            <p><strong>Focus:</strong> Secure systems, AI</p>
+            <p><strong>Duration:</strong> 3 years</p>
+            <p><strong>IB Entry:</strong> IB 27+, Math HL</p>
+            <div class="program-meta">
+                <div class="program-meta-item">
+                    <span class="label">approach</span>
+                    English-confirmed, ethical tech focus
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3>PRACTICAL NOTES</h3>
+        <div class="card">
+            <h4>GEOGRAPHY</h4>
+            <p>Breda/Groningen ~1-2hr train from Schiphol</p>
+        </div>
+
+        <div class="card">
+            <h4>COST</h4>
+            <p>Tuition low for EU (<span class="metric">~€2,314 in 2026</span>)</p>
+        </div>
+
+        <div class="card">
+            <h4>APPLICATION</h4>
+            <p>Apply via Studielink by <span class="metric">May 1</span></p>
+            <p>Prep portfolio now for games programs</p>
+        </div>
+
+        <div class="card">
+            <h4>NETWORKS</h4>
+            <p>Lead to studios like Guerrilla Games (Killzone, Horizon series)</p>
+        </div>
+    </div>
+
+    <div class="highlight" style="margin-top: var(--space-12);">
+        <p style="text-align: center; margin: 0;"><em>The goal: Emerge from IB with skill range and energy left. Then choose university with more signal.</em></p>
+    </div>
+</body>
+</html>
